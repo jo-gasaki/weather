@@ -35,11 +35,12 @@ function Weather() {
               </p>
             </div>
             <div>
-              画像
+            <img src={`${process.env.REACT_APP_OW_ICON_URL}/${data.weather[0].icon}.png`} 
+                alt={data.weather[0].description}/>
             </div>
           </div>
           <div className="pt-2">
-            <p className="font-light">Weather Condition</p>
+            <p className="font-light">お天気情報</p>
             <p className="text-lg font-medium tracking-widest">
             { data.weather[0].main }
             </p>
@@ -56,18 +57,18 @@ function Weather() {
               </div>
               <div>
                 <p className="font-light text-xs">
-                  Temprature
+                  気温
                 </p>
                 <p className="font-bold tracking-more-wider text-sm">
-                  20°C
+                {data.main.temp}°C
                 </p>
               </div>
               <div>
                 <p className="font-light text-xs">
-                  Humidity
+                  湿度
                 </p>
                 <p className="font-bold tracking-more-wider text-sm">
-                  40%
+                {data.main.humidity}%
                 </p>
               </div>
             </div>
