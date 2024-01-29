@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import dayjs from 'dayjs';
-function Weather() {
+function Weather({city_name}) {
 
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +12,7 @@ function Weather() {
     .then(result => {
       setData(result);
       setLoading(false);
-  },[data])});
+  },[city_name])});
 
   if (loading) {
     return <div></div>;
